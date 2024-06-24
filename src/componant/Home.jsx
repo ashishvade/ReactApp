@@ -1,12 +1,18 @@
 
 import React, { useEffect, useState } from 'react';
 import Calendar from './Calendar';
+import Footer from './Footer';
+import Header from './Header';
 
 const Home = () => {
+    const weekDay = { 0: "Jan", 1: "Feb", 2: "March", 3: "April", 4: "May", 5: "June", 6: "July",7:"Aug",8:"Sep",9:"Oct",10:"Nov",11:"Dec" };
+const monhtset=weekDay[new Date().getMonth()];
     const [events, setEvents] = useState([]);
     const [todayDate, setTodayDate] = useState('');
     const [yearFilter, setYearFilter] = useState('');
     const [monthFilter, setMonthFilter] = useState('');
+   
+    const [mon, setMonth] = useState(monhtset);
 
     // Fetch initial events data on component mount
     useEffect(() => {
@@ -21,7 +27,7 @@ const Home = () => {
     // Function to fetch events based on filters
     const fetchEvents = async () => {
         try {
-            const response = await fetch('http://localhost:5009/v1/naivadya/getShedule', {
+            const response = await fetch('http://43.205.140.194/:5009/v1/naivadya/getShedule', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,6 +54,13 @@ const Home = () => {
             console.error('Error fetching data:', error);
         }
     };
+   
+   
+        
+      
+  
+   
+    
 
     // Function to handle year filter change
     const handleYearChange = (event) => {
@@ -57,8 +70,12 @@ const Home = () => {
     // Function to handle month filter change
     const handleMonthChange = (event) => {
         setMonthFilter(event.target.value);
+        monthHandel(event.target.value)
     };
-
+let monthHandel=(event)=>{
+   
+setMonth(weekDay[event])
+}
     // Function to handle search button click
     const handleSearch = () => {
         fetchEvents();
@@ -72,8 +89,9 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="App text-center">
-            <h1> स्वामी समर्थांची आरती Calendar</h1>
+        <div className="container text-center">
+            
+         <h2>{mon}</h2>   <h1> स्वामी समर्थांची आरती Calendar</h1>
             <div className="filters">
                 <label htmlFor="year">Year:</label>
                 <input
@@ -108,6 +126,7 @@ const Home = () => {
                 <button onClick={handleSearch}>Search</button>
             </div><br></br>
             <Calendar events={events} todayDate={todayDate} />
+          
         </div>
     );
 };
