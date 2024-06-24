@@ -27,7 +27,7 @@ const monhtset=weekDay[new Date().getMonth()];
     // Function to fetch events based on filters
     const fetchEvents = async () => {
         try {
-            const response = await fetch('http://43.205.140.194/:5009/v1/naivadya/getShedule', {
+            const response = await fetch('http://localhost:3000/v1/naivadya/getShedule', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
