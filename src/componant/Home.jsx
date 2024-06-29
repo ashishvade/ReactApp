@@ -21,6 +21,7 @@ const Home = () => {
     fetchEvents();
   }, [yearFilter, monthFilter]);
 
+  //chNGES
   const fetchEvents = async () => {
     try {
       const response = await fetch('https://swamikendramanagment.onrender.com/v1/naivadya/getShedule', {
