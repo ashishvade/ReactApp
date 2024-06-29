@@ -17,7 +17,7 @@ function Alluser() {
   });
 
   const handelUser = async () => {
-    const res = await fetch("http://localhost:5009/v1/naivadya/getAllSevekari");
+    const res = await fetch("https://swamikendramanagment.onrender.com/v1/naivadya/getAllSevekari");
     const data = await res.json();
     setgetAllUser(data.data);
   };
