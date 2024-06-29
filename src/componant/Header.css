@@ -1,0 +1,28 @@
+:root {
+    --header-bg-color: #002147;
+    --header-text-color: white;
+    --nav-link-color: white;
+    --nav-link-hover-color: #ffa500; /* Orange */
+  }
+  
+  .header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: var(--nav-link-color);
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: var(--nav-link-hover-color);
+  }
+  

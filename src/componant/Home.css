@@ -1,0 +1,73 @@
+/* Home.css */
+
+.home-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  background-color: #f0f4f8; /* Light grey background */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #002147;
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.filters {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.filters label {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filters input,
+.filters select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #002147;
+  box-shadow: 0 0 5px rgba(0, 33, 71, 0.5);
+}
+
+.filters button {
+  padding: 10px 20px;
+  background-color: #002147;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.filters button:hover {
+  background-color: #00122e;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

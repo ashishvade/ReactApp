@@ -1,11 +1,18 @@
 import React from 'react'
 import { Link} from 'react-router-dom'
+
+const headerStyle = {
+    backgroundColor: '#002147', // Dark Blue
+    color: 'white', // White text for contrast
+    padding: '10px 0',
+    textAlign: 'center'
+  };
 function Header() {
     return (
-        <div className='text-center'>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div className='text-center' style={headerStyle}>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" >
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    {/* <a class="navbar-brand" href="#">Navbar</a> */}
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -17,30 +24,18 @@ function Header() {
                             <li class="nav-item">
                                 <Link Link class="nav-link active" aria-current="page" to="/aboutus">AboutUs</Link>
                             </li>
-                            
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <Link Link class="nav-link active" aria-current="page" to="/signup">SignUp</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                <Link Link class="nav-link active" aria-current="page" to="/sevekari">Sevekari</Link>
                             </li>
                            
                         </ul>
-                        {/* <div class="spinner-border text-dark" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div> */}
-                        <form class="d-flex" role="search">
+                        {/* <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                        </form> */}
                     </div>
                 </div>
             </nav>
@@ -49,3 +44,6 @@ function Header() {
 }
 
 export default Header
+
+
+
