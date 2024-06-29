@@ -9,15 +9,7 @@ import Hook from './componant/hook';
 import Signup from './componant/Signup';
 import Alluser from './componant/Alluser';
 
-// const containerStyle = {
-//   display: 'flex',
-//   flexDirection: 'column',
-//   minHeight: '100vh'
-// };
 
-// const contentStyle = {
-//   flex: 1
-// };
 
 const footerStyle = {
   // backgroundColor: '#f1f1f1',

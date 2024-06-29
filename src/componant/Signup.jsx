@@ -106,22 +106,7 @@ handelGetAllUser();
 
             </form>
 
-        {/* {record.map(item=>{
-
-return(
- <>
-        <p>{item.username}</p>
-       <p> {item.age}</p>
-       <p> {item.phone}</p>
-    <p>{item.password}</p>
-    <p> {item.gender}</p>
         
-  </>     
-    
-
-)
-})
-} */}
 
             <table class="table">
                 <thead>
@@ -147,7 +132,7 @@ return(
                         <td>{item.name}</td>
                         <td>{item.age}</td>
                         <td>{item.phone}</td>
-                        {/* <td>{item.password}</td> */}
+                      
                         <td>{item.gender}</td>
                     </tr>
                
@@ -158,11 +143,7 @@ return(
             </table>
 
 
-            {/* name:{userRegister.username}
-            age:{userRegister.age}
-            phone:{userRegister.phone}
-            password:{userRegister.password}
-            gender:{userRegister.gender} */}
+          
 
         </>
     )
