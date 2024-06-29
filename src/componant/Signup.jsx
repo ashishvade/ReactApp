@@ -12,7 +12,7 @@ function Signup() {
     })
     const [getAllUser,setgetAllUser]=useState([])
 
-    const [record, setRecord] = useState([]);
+    
     const handelInput = (e) => {
         const name=e.target.name;
         const value=e.target.value;

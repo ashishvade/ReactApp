@@ -7,9 +7,7 @@ function AboutUs() {
         imageSize: 90,
       };
   return (
-    // <div className='container'>
-      
-    // </div>
+   
       <>
       <h1>{user.name}</h1>
       <img

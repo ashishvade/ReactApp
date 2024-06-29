@@ -1,8 +1,8 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './AllUser.css'; // Make sure to import the CSS file
+
+import './AllUser.css'; 
 
 function Alluser() {
   const [getAllUser, setgetAllUser] = useState([]);

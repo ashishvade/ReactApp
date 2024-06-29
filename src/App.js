@@ -11,14 +11,6 @@ import Alluser from './componant/Alluser';
 
 
 
-const footerStyle = {
-  // backgroundColor: '#f1f1f1',
-  
-  backgroundColor: '#333333', // Dark Gray
-  color: 'white', // White text for contrast
-  padding: '10px 0',
-  textAlign: 'center'
-};
 
 const containerStyle = {
   display: 'flex',

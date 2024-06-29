@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchEvents();
-  }, []);
+  }, [ fetchEvents]);
 
   useEffect(() => {
     fetchEvents();
@@ -65,10 +65,10 @@ const Home = () => {
   const handleSearch = () => {
     fetchEvents();
   };
-  
-  useEffect(() => {
-    fetchEvents();
-  }, [fetchEvents]);
+
+  // useEffect(() => {
+  //   fetchEvents();
+  // }, [fetchEvents]);
 
   useEffect(() => {
     const today = new Date();
