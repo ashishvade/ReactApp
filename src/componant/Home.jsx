@@ -65,12 +65,16 @@ const Home = () => {
   const handleSearch = () => {
     fetchEvents();
   };
+  
+  useEffect(() => {
+    fetchEvents();
+  }, [fetchEvents]);
 
   useEffect(() => {
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
     setTodayDate(formattedDate);
-  }, [fetchEvents]);
+  }, []);
 
   return (
     <>
