@@ -23,7 +23,7 @@ const Home = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch('http://localhost:5009/v1/naivadya/getShedule', {
+      const response = await fetch('https://swamikendramanagment.onrender.com/v1/naivadya/getShedule', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

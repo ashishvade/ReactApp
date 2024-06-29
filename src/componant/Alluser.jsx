@@ -419,7 +419,7 @@ function Alluser() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5009/v1/naivadya/updateNaivadya", {
+    const response = await fetch("https://swamikendramanagment.onrender.com/v1/naivadya/updateNaivadya", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
