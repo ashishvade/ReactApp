@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link} from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
+import Logout from './Logout';
 const headerStyle = {
     backgroundColor: '#002147', // Dark Blue
     color: 'white', // White text for contrast
@@ -8,6 +8,11 @@ const headerStyle = {
     textAlign: 'center'
   };
 function Header() {
+
+    const isAuth = localStorage.getItem('auth') === 'true';
+   
+
+   
     return (
         <div className='text-center' style={headerStyle}>
             <nav class="navbar navbar-expand-lg bg-body-tertiary" >
@@ -21,15 +26,17 @@ function Header() {
                             <li class="nav-item">
                                 <Link Link class="nav-link active" aria-current="page" to="/home">Home</Link>
                             </li>
-                            <li class="nav-item">
+                            {/* <li class="nav-item">
                                 <Link Link class="nav-link active" aria-current="page" to="/aboutus">AboutUs</Link>
                             </li>
                             <li class="nav-item">
                                 <Link Link class="nav-link active" aria-current="page" to="/signup">SignUp</Link>
-                            </li>
+                            </li> */}
                             <li class="nav-item">
                                 <Link Link class="nav-link active" aria-current="page" to="/sevekari">Sevekari</Link>
                             </li>
+                            {/* {isAuth && <li class="nav=item"><Link  class="nav-link active" aria-current="page" to="/sevekari">Sevekari</Link></li>} */}
+                            {isAuth && <li><Logout /></li>}
                            
                         </ul>
                         {/* <form class="d-flex" role="search">
