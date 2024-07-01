@@ -8,6 +8,13 @@
   background-color: #f0f4f8; /* Light grey background */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-image: url('../swamiImage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 @media (min-width: 768px) {
