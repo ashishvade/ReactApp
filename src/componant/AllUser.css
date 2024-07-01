@@ -65,6 +65,8 @@
     padding: 20px;
     border-radius: 5px;
     position: relative;
+    max-width: 90%; /* Adjust max-width for smaller screens */
+    width: 300px;
   }
   
   .close-btn {

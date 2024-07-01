@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logout from './Logout';
 const headerStyle = {
@@ -11,20 +11,27 @@ function Header() {
 
     const isAuth = localStorage.getItem('auth') === 'true';
    
+    const [isOpen, setIsOpen] = useState(false);
 
+    const toggleNavbar = () => {
+      setIsOpen(!isOpen);
+    };
    
     return (
         <div className='text-center' style={headerStyle}>
             <nav class="navbar navbar-expand-lg bg-body-tertiary" >
                 <div class="container-fluid">
                     {/* <a class="navbar-brand" href="#">Navbar</a> */}
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button"onClick={toggleNavbar} 
+          aria-controls="navbarSupportedContent" 
+          aria-expanded={isOpen ? "true" : "false"}
+          aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <Link Link class="nav-link active" aria-current="page" to="/home">Home</Link>
+                                <Link  class="nav-link active" aria-current="page" to="/home">Home</Link>
                             </li>
                             {/* <li class="nav-item">
                                 <Link Link class="nav-link active" aria-current="page" to="/aboutus">AboutUs</Link>
@@ -33,7 +40,7 @@ function Header() {
                                 <Link Link class="nav-link active" aria-current="page" to="/signup">SignUp</Link>
                             </li> */}
                             <li class="nav-item">
-                                <Link Link class="nav-link active" aria-current="page" to="/sevekari">Sevekari</Link>
+                                <Link  class="nav-link active" aria-current="page" to="/sevekari">Sevekari</Link>
                             </li>
                             {/* {isAuth && <li class="nav=item"><Link  class="nav-link active" aria-current="page" to="/sevekari">Sevekari</Link></li>} */}
                             {isAuth && <li><Logout /></li>}
