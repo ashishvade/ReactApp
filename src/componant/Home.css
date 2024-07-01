@@ -1,13 +1,19 @@
 /* Home.css */
 
 .home-container {
-  max-width: 1140px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 15px;
   text-align: center;
   background-color: #f0f4f8; /* Light grey background */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .home-container {
+    max-width: 600px; /* Example of adjusting max-width for tablets and larger screens */
+  }
 }
 
 .title {
@@ -21,6 +27,7 @@
 .filters {
   margin-bottom: 20px;
   display: flex;
+  flex-wrap: wrap; 
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -39,6 +46,7 @@
   border-radius: 5px;
   font-size: 1em;
   transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
 }
 
 .filters input:focus,

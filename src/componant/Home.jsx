@@ -109,7 +109,7 @@ const Home = () => {
     <>
     <div className="home-container">
       {/* <Header /> */}
-      <h2>{mon}</h2>
+      <h2 className="title">{mon}   {yearFilter}</h2>
       <h1 className="title">स्वामी समर्थांची आरती Calendar</h1>
       <div className="filters">
         <label htmlFor="year">Year:</label>
