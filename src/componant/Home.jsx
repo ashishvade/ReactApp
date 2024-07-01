@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Calendar from './Calendar';
-
+import * as XLSX from 'xlsx';
 import './Home.css';
 
 const Home = () => {
@@ -77,6 +77,34 @@ const Home = () => {
     setTodayDate(formattedDate);
   }, []);
 
+  const handleDownload = () => {
+    
+    const header = [['day', 'dayname', 'data'], ['', '', 'name', 'mobail', 'time']];
+    const merges = [{ s: { r: 0, c: 2 }, e: { r: 0, c: 4 } }];
+    const data = events.flatMap(event => 
+      event.data.map(item => ({
+        day: event.day,
+        dayname: event.dayname,
+        name: item.name,
+        mobail: item.mobail,
+        time: item.time
+      }))
+    );
+
+   
+    const worksheet = XLSX.utils.json_to_sheet([], { skipHeader: true });
+    XLSX.utils.sheet_add_aoa(worksheet, header, { origin: 'A1' });
+    worksheet['!merges'] = merges;
+    XLSX.utils.sheet_add_json(worksheet, data, { origin: 'A3' });
+
+    
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Events');
+
+ 
+    XLSX.writeFile(workbook, 'events.xlsx');
+  };
+
   return (
     <>
     <div className="home-container">
@@ -113,6 +141,7 @@ const Home = () => {
           <option value="11">December</option>
         </select>
         <button onClick={handleSearch}>Search</button>
+        <button onClick={handleDownload}>Download Excel</button>
       </div>
      
       {/* <Footer /> */}
