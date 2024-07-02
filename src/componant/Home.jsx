@@ -7,9 +7,10 @@ import './Home.css';
 const Home = () => {
   const weekDay = { 0: "Jan", 1: "Feb", 2: "March", 3: "April", 4: "May", 5: "June", 6: "July", 7: "Aug", 8: "Sep", 9: "Oct", 10: "Nov", 11: "Dec" };
   const monhtset = weekDay[new Date().getMonth()];
+  let cuyear=new Date().getFullYear()
   const [events, setEvents] = useState([]);
   const [todayDate, setTodayDate] = useState('');
-  const [yearFilter, setYearFilter] = useState('');
+  const [yearFilter, setYearFilter] = useState(cuyear);
   const [monthFilter, setMonthFilter] = useState('');
   const [mon, setMonth] = useState(monhtset);
 
@@ -21,7 +22,7 @@ const Home = () => {
     fetchEvents();
   }, [yearFilter, monthFilter]);
 
-  //chNGES
+  
   const fetchEvents = async () => {
     try {
       const response = await fetch('https://swamikendramanagment.onrender.com/v1/naivadya/getShedule', {
@@ -79,7 +80,7 @@ const Home = () => {
 
   const handleDownload = () => {
     
-    const header = [['day', 'dayname', 'data'], ['', '', 'name', 'mobail', 'time']];
+    const header = [];
     const merges = [{ s: { r: 0, c: 2 }, e: { r: 0, c: 4 } }];
     const data = events.flatMap(event => 
       event.data.map(item => ({

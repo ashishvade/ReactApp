@@ -45,7 +45,7 @@ function Footer() {
     <footer className="footer" style={footerStyle}>
       <div className="container text-center">
         <h4 className="text-uppercase">Shree Swami Smarath</h4>
-        <h6>@Ashish Vade</h6>
+        <h6>@Ashish</h6>
       </div>
     </footer>
   );
